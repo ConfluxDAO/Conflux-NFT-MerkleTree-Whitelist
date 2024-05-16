@@ -4,10 +4,16 @@ async function main() {
   const signers = await hre.conflux.getSigners();
   const defaultAccount = signers[0];
 
-  const ConfluxCRC721NFT = await hre.conflux.getContractFactory(
-    "MerkleTreeNFT"
-  );
-  const receipt = await ConfluxCRC721NFT.constructor("Confi", "Confi")
+  const MerkleTreeNFT = await hre.conflux.getContractFactory("MerkleTreeNFT");
+
+  const root =
+    "0x2823b48e7e4f60b6284176cbed733278ede812ca87f7918a0c543e20e2987eab";
+
+  const receipt = await MerkleTreeNFT.constructor(
+    "Confi MerkleTree",
+    "Confi",
+    root
+  )
     .sendTransaction({
       from: defaultAccount.address,
     })
