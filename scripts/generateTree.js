@@ -1,6 +1,6 @@
 const { MerkleTree } = require("merkletreejs");
 const keccak256 = require("keccak256");
-const { Conflux, format } = require("js-conflux-sdk");
+const { format } = require("js-conflux-sdk");
 
 // List of addresses
 const whitelist = [
